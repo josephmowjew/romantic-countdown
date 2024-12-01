@@ -69,27 +69,73 @@
             position: relative;
             min-height: 280px;
             overflow: visible;
+            padding: 0 1rem;
         }
         .photo-wrapper {
             transition: all 1s ease-in-out;
             position: absolute;
-            width: 200px;
+            width: auto;
         }
-        .photo-wrapper.left {
-            left: 20%;
-            transform: translateX(0);
+        @media (min-width: 768px) {
+            .photo-wrapper.left {
+                left: 20%;
+                transform: translateX(0);
+            }
+            .photo-wrapper.right {
+                right: 20%;
+                transform: translateX(0);
+            }
+            .photo-wrapper.swap-left {
+                left: 20%;
+                transform: translateX(150%);
+            }
+            .photo-wrapper.swap-right {
+                right: 20%;
+                transform: translateX(-150%);
+            }
         }
-        .photo-wrapper.right {
-            right: 20%;
-            transform: translateX(0);
-        }
-        .photo-wrapper.swap-left {
-            left: 20%;
-            transform: translateX(150%);
-        }
-        .photo-wrapper.swap-right {
-            right: 20%;
-            transform: translateX(-150%);
+        @media (max-width: 767px) {
+            .photo-wrapper.left {
+                left: 5%;
+                transform: translateX(0);
+            }
+            .photo-wrapper.right {
+                right: 5%;
+                transform: translateX(0);
+            }
+            .photo-wrapper.swap-left {
+                left: 5%;
+                transform: translateX(90vw);
+            }
+            .photo-wrapper.swap-right {
+                right: 5%;
+                transform: translateX(-90vw);
+            }
+            .photo-frame {
+                transform: rotate(0deg) !important;
+            }
+            .photo-frame.right {
+                transform: rotate(0deg) !important;
+            }
+            .w-40 {
+                width: 32px;
+            }
+            .h-52 {
+                height: 42px;
+            }
+            .heart-divider {
+                font-size: 1.5rem;
+            }
+            h1 {
+                font-size: 1.875rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .countdown-item {
+                padding: 0.5rem !important;
+            }
+            .countdown-item div:first-child {
+                font-size: 1.5rem !important;
+            }
         }
         .heart-divider {
             position: relative;
@@ -221,20 +267,20 @@
 
                 <div class="photo-wrapper left">
                     <div class="photo-frame group">
-                        <div class="w-40 h-52 bg-rose-50 rounded-lg overflow-hidden">
+                        <div class="w-40 h-52 md:w-48 md:h-64 bg-rose-50 rounded-lg overflow-hidden">
                             <img src="joseph1.jpeg" alt="Joseph" id="josephImage" class="w-full h-full object-cover transition-all duration-1000 ease-in-out">
                         </div>
-                        <p class="text-center mt-2 text-rose-600 font-semibold">Joseph</p>
+                        <p class="text-center mt-2 text-rose-600 font-semibold text-sm md:text-base">Joseph</p>
                         <div class="ribbon"></div>
                     </div>
                 </div>
 
                 <div class="photo-wrapper right">
                     <div class="photo-frame right group">
-                        <div class="w-40 h-52 bg-rose-50 rounded-lg overflow-hidden">
+                        <div class="w-40 h-52 md:w-48 md:h-64 bg-rose-50 rounded-lg overflow-hidden">
                             <img src="chim1.jpeg" alt="Chim" id="chimImage" class="w-full h-full object-cover transition-all duration-1000 ease-in-out">
                         </div>
-                        <p class="text-center mt-2 text-rose-600 font-semibold">Chim</p>
+                        <p class="text-center mt-2 text-rose-600 font-semibold text-sm md:text-base">Chim</p>
                         <div class="ribbon"></div>
                     </div>
                 </div>
